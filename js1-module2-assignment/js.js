@@ -1,3 +1,4 @@
+
 /* Question 1
 Refer: lesson 1
 Create a function expression by assigning an anonmyous function to a variable called myFunctionExpression. The function should console log your name. */
@@ -35,13 +36,13 @@ function callWhenKeyDown(event) {
 /* Question 4
 Refer: lesson 2 / 3
 Select the button in the HTML below by its tag. Add a mouseover event listener. The callback function should add a class called hover to the button. */
-const button = document.querySelector("buttton")
+const buttons = document.querySelector("btn")
 
 function callOnHover() {
     console.log("The cursor moved over the button");
 };
 
-button.addEventListener("mouseover", callOnHover);
+buttons.addEventListener("mouseover", callOnHover);
 
 
 
@@ -83,3 +84,5 @@ Create a timer that logs the word hello every half a second. It must stop after 
 /* Question 10
 Refer: lesson 4
 Select the div from the HTML below. Write code that updates the div's text to say Text updated after waiting 2 seconds. You can use either innerText or innerHTML to update the text. */
+
+
