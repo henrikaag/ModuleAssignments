@@ -15,34 +15,43 @@ Select the button in the HTML below by its class. Add a click event listener. Th
 
 You can pass the function in directly, declare it and pass it in by its name or assign it to a variable and pass it in by the variable name. */
 
-function respondToClick() {
+const button = document.querySelector(".btn");
+
+let buttonClicker = function() {
     console.log('I was clicked');
-}
+};
+button.addEventListener("click", buttonClicker);
+
 
 
 /* Question 3
 Refer: lesson 2
 Select the input in the HTML below by its id. Add a keydown event listener. The callback function passed to the event listener should log the value of the key that was pressed. */
 
-const textInput = document.querySelector("firstName")
+const textInput = document.querySelector("#firstName")
 
 function callWhenKeyDown(event) {
     console.dir(event);
-    console.log("A key was released");
+    console.log("A key was pressed");
 };
+textInput.addEventListener("keydown", callWhenKeyDown);
 
 
 
 /* Question 4
 Refer: lesson 2 / 3
 Select the button in the HTML below by its tag. Add a mouseover event listener. The callback function should add a class called hover to the button. */
-const buttons = document.querySelector("btn")
+const buttons = document.querySelectorAll("button");
 
-function callOnHover() {
+function callOnHover(event) {
+    console.log(event);
     console.log("The cursor moved over the button");
+    event.target.classList.add("hover");
 };
 
-buttons.addEventListener("mouseover", callOnHover);
+buttons.forEach(function(item) {
+    item.addEventListener("mouseover", callOnHover);
+});
 
 
 
@@ -50,6 +59,15 @@ buttons.addEventListener("mouseover", callOnHover);
 Refer: lesson 2 / 3
 Select the button in the HTML below by its data attribute and add a mouseout event listener to it. The callback function should remove the class called hover from the button. */
 
+const hoverButton = document.querySelector("[data-animal=dog]");
+
+function removeHover(event) {
+    console.log(event);
+    event.target.classList.remove("hover");
+    console.log("The cursor moved off the button", event.target.classList);
+    
+};
+hoverButton.addEventListener("mouseout", removeHover);
 
 
 /* Question 6
